@@ -6,7 +6,22 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 
 public class StudentsGroup implements Iterable<Student> {
-    private List<Student> students;
+    private String nameGroup;
+    private int groupId;
+    private Teacher teacher;
+
+    public StudentsGroup(String nameGroup, int groupId) {
+        this.nameGroup = nameGroup;
+        this.groupId = groupId;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
     public List<Student> getStudents() {
         return students;
