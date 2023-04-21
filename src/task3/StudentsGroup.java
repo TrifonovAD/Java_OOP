@@ -2,33 +2,23 @@ package task3;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class StudentsGroup implements Iterable<Student> {
     private String nameGroup;
     private int groupId;
     private Teacher teacher;
+    private List<Student> students;
 
-    public StudentsGroup(String nameGroup, int groupId) {
+    public StudentsGroup(String nameGroup, int groupId, Teacher teacher) {
         this.nameGroup = nameGroup;
         this.groupId = groupId;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+        teacher.addGroupToTeacher(this);
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    @Override
+    public String toString() {
+        return String.format("%s. ID: %d", nameGroup, groupId);
     }
 
     @Override
