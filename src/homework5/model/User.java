@@ -5,7 +5,7 @@ public class User {
     private int age;
     private Double balance;
 
-    public User(String name, int age, Double balance) {
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
         this.balance = Double.valueOf(0);
@@ -31,4 +31,24 @@ public class User {
         return balance;
     }
 
+    public void payment(Double amount) {
+        this.balance += amount;
+    }
+
+    public Double withdrawal(Double amount) {
+        if (amount >= this.balance) {
+            amount = this.balance;
+        }
+        this.balance -= amount;
+        return amount;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", balance=" + balance +
+                '}';
+    }
 }
