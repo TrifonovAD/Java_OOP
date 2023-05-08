@@ -1,20 +1,17 @@
 package homework6.model;
 
+import java.util.Map;
+
 public class HotDrink extends Drink {
     private int temperature;
 
-
-    public HotDrink(String name, int cost, Double volume, int temperature) {
-        super(name, cost, volume);
-        this.temperature = temperature;
-    }
-
-    public int getTemperature() {
-        return temperature;
+    public HotDrink(Map<String, Object> productInfo) {
+        super(productInfo);
+        this.temperature = (int) productInfo.get("temp");
     }
 
     @Override
     public String toString() {
-        return String.format("%s. Temperature %d", super.toString(), temperature);
+        return String.format("%s Температура %d", super.toString(), temperature);
     }
 }
