@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        private static Scanner scanner = new Scanner(System.in);
         System.out.println("Write two numbers and +, -, * or / sign");
         char mathSign = 0;
         double leftDigital = 0;
